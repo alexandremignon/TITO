@@ -82,18 +82,18 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 #                                          'unsure': 'grey'})
 # 
     # build histogram figure
-    dff = dff[dff.party != 'unsure']
-    fig_bar = px.histogram(dff, x='party', y='electoral votes', color='party',
-                           range_y=[0,350], color_discrete_map={'democrat': 'blue',
-                                                                'republican': 'red'}
-                           )
-    # add horizontal line
-    fig_bar.update_layout(showlegend=False, shapes=[
-        dict(type='line', yref='paper',y0=0.77,y1=0.77, xref='x',x0=-0.5,x1=1.5)
-    ])
-    # add annotation text above line
-    fig_bar.add_annotation(x=0.5, y=280, showarrow=False, text="270 votes to win")
-
+# dff = dff[dff.party != 'unsure']
+# fig_bar = px.histogram(dff, x='party', y='electoral votes', color='party',
+#                            range_y=[0,350], color_discrete_map={'democrat': 'blue',
+#                                                                 'republican': 'red'}
+#                            )
+#     # add horizontal line
+#     fig_bar.update_layout(showlegend=False, shapes=[
+#         dict(type='line', yref='paper',y0=0.77,y1=0.77, xref='x',x0=-0.5,x1=1.5)
+#     ])
+#     # add annotation text above line
+#     fig_bar.add_annotation(x=0.5, y=280, showarrow=False, text="270 votes to win")
+# 
     return fig_map, fig_bar
 
 
